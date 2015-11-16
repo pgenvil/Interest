@@ -3,9 +3,18 @@ Rails.application.routes.draw do
 
 
 
-  resources :users          # NEW LINE
+  resources :users   
+
+ resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
+
   resources :microposts, only: [:create, :destroy]  
   root 'static_pages#home'
+
 
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
