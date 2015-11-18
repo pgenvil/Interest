@@ -17,10 +17,6 @@ $gray-medium-light: #eaeaea;
 }
 /* universal */
 
-body {
-  background-color: #fff;
-  padding-top: 60px;
-}
 
 section {
 
@@ -276,3 +272,21 @@ input {
         border: 0;
       }
     }
+
+    .users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+body {
+  background-color: #fffff;
+  padding-top: 60px;
+}
+.navbar-nav{
+  backgroud-color:#fffff;
+}

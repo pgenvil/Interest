@@ -20,7 +20,11 @@ before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
       render 'edit'
     end
   end
-
+  
+   def index
+    @users = User.paginate(page: params[:page])
+  end
+  
   def create
     secure_params = params.require(:user).permit(:name, :email,
                                                  :password, :password_confirmation)
