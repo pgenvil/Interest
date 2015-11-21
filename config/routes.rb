@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :microposts, only: [:create, :destroy]  
   root 'static_pages#home'
 
-
+  get 'interest' => 'users#viewinterest'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'

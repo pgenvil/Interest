@@ -12,6 +12,10 @@ before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
 
   end
 
+  def viewinterest
+     
+   end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
