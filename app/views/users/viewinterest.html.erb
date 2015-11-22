@@ -1,1 +1,11 @@
 <h1>Welcome to manager you interests<h1>
+
+<ul class="users">
+<% current_user.interest_tags.each do |interest_tags|%>
+    <li>
+    <%= link_to interest_tags.name %>
+      
+    </li>
+  <% end %>
+  
+</ul>
