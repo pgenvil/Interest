@@ -1,0 +1,15 @@
+<h1>The Activities list<h1>
+
+
+<tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.title %></td>
+        <td><%= activity.content %></td>
+        <td><%= activity.location %></td>
+        </tr>
+        </br>
+      <% end %>
+</tbody>
+</br>
+<%= link_to 'New Activity', new_activity_path %>

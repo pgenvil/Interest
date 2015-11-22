@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :activities
   has_and_belongs_to_many :interest_tags 
   has_many :microposts, dependent: :destroy
 
