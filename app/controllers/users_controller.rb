@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
-                                        :following, :followers]
+                                        :following, :followers,:viewinterest]
 
   def show
     @user = User.find(params[:id])
@@ -13,7 +13,8 @@ before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
   end
 
   def viewinterest
-     
+    
+     @interest_tags = current_user.interest_tags
    end
 
   def update
@@ -45,6 +46,7 @@ before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
   def edit
     @user = User.find(params[:id])
   end
+
   def following
     @title = "Following"
     @user  = User.find(params[:id])
