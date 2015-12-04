@@ -37,7 +37,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'sqlite3'
+  #gem 'sqlite3'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -51,4 +51,5 @@ group :production  do
 end
 
 gem 'bcrypt',   '3.1.7'
+gem 'mysql2', '~> 0.3.18'
 gem 'tzinfo-data', platforms: [:x64_mingw,:mingw, :mswin]
