@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :locations
   resources :activities
+  resources :interest_tags
   get 'sessions/new'
 
 
