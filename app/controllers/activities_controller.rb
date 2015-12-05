@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
 
   def create
   	 secure_post = params.require(:activity).permit(:title,:location,:content)
+   
      @activity=current_user.activities.build( secure_post)
      if @activity.save
           flash[:success] = "activity created!"
