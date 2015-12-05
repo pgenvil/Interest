@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
- before_action :logged_in_user, only: [:create, :destroy]
+ before_action :logged_in_user, only: [:create,:destroy]
   def  index
   	  @activities=Activity.all
   end
@@ -23,6 +23,13 @@ class ActivitiesController < ApplicationController
   def new
       @activity=Activity.new
  end
+
+  def destroy
+       @activity= current_user.activities.find_by(id: params[:id])
+       @activity.destroy
+
+        redirect_to activities_path
+  end
 
   def correct_user
      @activity= current_user.activities.find_by(id: params[:id])
