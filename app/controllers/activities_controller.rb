@@ -36,6 +36,6 @@ class ActivitiesController < ApplicationController
   def correct_user
      @activity= current_user.activities.find_by(id: params[:id])
       redirect_to index if @activity.nil?
-            end
+     end
   
 end
