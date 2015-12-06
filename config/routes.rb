@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :activities
   resources :interest_tags
+  resources :comments, only: [:create, :destroy]
   get 'sessions/new'
 
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
    resources :relationships,   only: [:create, :destroy]
   resources :microposts, only: [:create, :destroy]  
   root 'static_pages#home'
-
+ 
   get 'interest' => 'users#viewinterest'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
