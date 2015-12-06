@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122221459) do
+ActiveRecord::Schema.define(version: 20151205234511) do
 
   create_table "activities", force: :cascade do |t|
-    t.text     "content",    limit: 65535
-    t.string   "title",      limit: 255
-    t.string   "location",   limit: 255
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "content",     limit: 65535
+    t.string   "title",       limit: 255
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "location_id", limit: 4
   end
 
   add_index "activities", ["user_id", "created_at"], name: "index_activities_on_user_id_and_created_at", using: :btree
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20151122221459) do
     t.datetime "updated_at",                  null: false
     t.string   "password_digest", limit: 255
     t.string   "remember_digest", limit: 255
+    t.integer  "location_id",     limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -9,15 +9,17 @@ class ActivitiesController < ApplicationController
   end
 
   def create
-  	 secure_post = params.require(:activity).permit(:title,:location,:content)
-
-     @activity=current_user.activities.build( secure_post)
-     if @activity.save
+  	 secure_post = params.require(:activity).permit(:title,:content,:location_id)
+      
+     @activity=current_user.activities.new(secure_post)
+    if (Location.find(params[:activity][:location_id])and
+    @activity.save)
           flash[:success] = "activity created!"
-          redirect_to activities_path
+          redirect_to action: 'index', notice: 'Activity was successfully created.'
       else
-      	 render'create'  
-      	end
+      	 render'new'  
+      end   
+    
  end 	
 
   def new
