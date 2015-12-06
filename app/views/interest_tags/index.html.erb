@@ -1,8 +1,12 @@
 <h1>All the interests</h1>
 
-<h3>Sport</h3><p>sport is very good for people healthy</p>
-<h3>Film </h3><p>Film is very common for people to relax</p>
-<h3>Reading</h3><p>sport is very good for people healthy</p>
-<h3>Games</h3><p>sport is very good for people healthy</p>
-<h3>Music</h3><p>sport is very good for people healthy</p>
-<h3>Travelling</h3><p>sport is very good for people healthy</p>
+ <tbody>
+    <% @interest.each do |interest| %>
+      <tr>
+        <td><%= interest.name%>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+       
+        <td><%= link_to 'Destroy', interest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      </br>
+    <% end %>
+  </tbody>

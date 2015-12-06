@@ -10,5 +10,24 @@
                                            data: { confirm: "You sure?" } %>
         <% end %>
         <!-- END DELETE LINK -->
+
       </span>
+       <h3>comment</h3>
+        <span class="comment">
+        <%= render micropost.comments %>
+        </span>
+        <span class="form">
+        <%if @comment!=nil%>
+          <%= form_for(@comment) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+          <%= f.text_area :content, placeholder: "Write your comment..." %>
+        
+          <%= f.hidden_field(:user_id, :value =>current_user.id ) %>
+          <%= f.hidden_field(:micropost_id, :value =>micropost.id ) %>
+        </div>
+        <%= f.submit "Send your comment", class: "btn btn-primary" %>
+        <% end %>
+        <% end %>
+        </span>
     </li>

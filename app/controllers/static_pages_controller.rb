@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   	if logged_in?
             @micropost  = current_user.microposts.build
             @feed_items = current_user.feed
+            @comment= current_user.comments.build
          end
   end
 
@@ -11,5 +12,10 @@ class StaticPagesController < ApplicationController
 
   def about # NEW
     flash[:notice] = "Testing the flash"
+  end
+
+  def mycommentpost
+    @commentposts=current_user.show_my_postcomment
+    @comment=current_user.comments.build
   end
 end

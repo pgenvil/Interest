@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :activities
+  has_many :comments
+  has_many :commented_posts, :class_name => "Micropost" ,
+               :through => :comments, :source => :micropost
   has_and_belongs_to_many :interest_tags 
   has_many :microposts, dependent: :destroy
 
