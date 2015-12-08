@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-   User.create(name:'Bing Chen L', email:'123@gmail.com', password: "secret", password_confirmation: "secret")
-  User.create(name:'bing chen l', email:'1234@gmail.com', password: "secret", password_confirmation: "secret")
-  User.create(name:'Harry Potter', email:'12345@gmail.com', password: "secret", password_confirmation: "secret")
+ User.create(name:'Bing Chen L', email:'123@gmail.com', password: "secret", password_confirmation: "secret")
+ User.create(name:'bing chen l', email:'1234@gmail.com', password: "secret", password_confirmation: "secret")
+ User.create(name:'Harry Potter', email:'12345@gmail.com', password: "secret", password_confirmation: "secret")
 
     user = User.find(1)
     user.microposts.create(content: "I love Ruby")
@@ -48,3 +48,9 @@
     comment.user = User.find(2)
     comment.micropost = Micropost.find(2)
     comment.save
+   
+
+   location=Location.find(1)
+   location.activities.create(title:"football",content:"we have football tonight")
+    location=Location.find(2)
+   location.activities.create(title:"GAA",content:"WE HAVE GAA tonight")
