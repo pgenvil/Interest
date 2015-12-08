@@ -52,5 +52,5 @@
 
    location=Location.find(1)
    location.activities.create(title:"football",content:"we have football tonight")
-    location=Location.find(2)
+  location=Location.find(2)
    location.activities.create(title:"GAA",content:"WE HAVE GAA tonight")
