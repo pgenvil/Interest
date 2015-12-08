@@ -1,5 +1,6 @@
 class InterestTagsController < ApplicationController
  before_action :logged_in_user, only: [:create,:destroy]
+ before_action :correct_user,   only: :destroy  
 
 
 def index
@@ -19,9 +20,15 @@ def create
       end  
 end	
 
-      def correct_user
+def destroy
+       @interest.destroy
+        redirect_to action: 'index', notice: 'interest was successfully destroy.'
+ end 
+
+   def correct_user
      @interest = current_user.interest_tags.find_by(id: params[:id])
       redirect_to root_url if @interest.nil?
     end
+
 
 end	
